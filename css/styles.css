@@ -1,7 +1,12 @@
+html {
+  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/potw1706a.jpg);
+  background-size: cover;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font size: 100%;
-  color: #333
+  color: #FFF
 }
 
 .header {
@@ -71,7 +76,7 @@ p {
   color: #9F6000;
   background-color: #FEEFB3;
   margin: 5px 5px 0 5px;
-  text-align: center 
+  text-align: center
 }.warning:before {
     content: '\26A0'
 }
