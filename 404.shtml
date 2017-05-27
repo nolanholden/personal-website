@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Error: Page not found.">
+  <meta name="author" content="Nolan Holden">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>4OH!4</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/chessboard-0.3.0.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i|Roboto:300,300i&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body class="header">
+  <div>&nbsp;</div>
+  <h1>Page does not exist!</h1>
+  <p>&quot;Give no thought to inconvenience; may resilience enrich your creativity.&quot;</p>
+</body>
+</html>
