@@ -4,20 +4,24 @@
   <meta charset="utf-8">
   <meta name="description" content="Home page.">
   <meta name="author" content="Nolan Holden">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Welcome home.</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i|Roboto:300,300i&amp;subset=latin-ext" rel="stylesheet">
+	<script src="js/main.min.js"></script>
 </head>
 <body>
+  <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/potw1706a.jpg" />
   <!--[if lt IE 8]>
     <div class="browser-support-message">
       <p>Parts of this site will look outdated because we use modern web design techniques which do not display correctly in your current browser. Improve your web experience by surfing with a <a href="http://browsehappy.com/">modern browser</a>.</p>
     </div>
   <![endif]-->
+  <div class="remainder">
   <noscript>
     <div style="border: 4px solid red; padding: .2em; margin: 1em">
       <h3>JavaScript disabled!</h3>
@@ -29,10 +33,16 @@
   <div>&nbsp;</div>
   <div class="header">
     <h1>Welcome home.</h1>
-    <p>My name is Nolan Holden. This is where I post code and learn about web development.</p>
+    <p id="p1">My name is Nolan Holden. This is where I post code and learn about web development.</p>
   </div>
   <div>&nbsp;</div>
-  <hr class="main">
+  <hr id="hr1" class="main">
+  <div id="astroscene" class="scene">
+    <div class="layer" data-depth="1.2">
+      <img src="img/nasa/buzz.jpg" />
+      <p id="overlay" class="text-overlay" style="display: none">See me on github!</p>
+    </div>
+  </div>
   <div class="main">
     <p><span class="header">Here is a recent C++ project, implementing an <a href="http://weijima.com/index.php?option=com_content&view=article&id=11">m,n,k-game</a>.</span></p>
     <p><span class="header">Or, see it on my <a href="https://github.com/nolanholden">github</a>!</span></p>
@@ -43,5 +53,16 @@
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <hr class="main">
+  <div>
+  <script>
+    var astroscene = document.getElementById('astroscene');
+    var parallax = new Parallax(astroscene);
+    astroscene.style.zIndex = -3;
+    document.getElementById('hr1').style.zIndex = -4;
+    document.body.style.overflowX = 'hidden';
+    var overlay = document.getElementById('overlay');
+    overlay.style.webkitTransform = 'rotate(-6.3deg)';
+    overlay.style.display = 'block';
+  </script>
 </body>
 </html>
