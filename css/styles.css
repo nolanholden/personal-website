@@ -1,12 +1,16 @@
-html {
-  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/potw1706a.jpg);
-  background-size: cover;
+body {
+  background-color: #000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  color: #eee;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font size: 100%;
-  color: #FFF
+img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  top: -20px;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
 }
 
 .header {
@@ -21,19 +25,38 @@ body {
   margin: 0 25px 0 25px
 }
 
+.scene {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.text-overlay {
+  font-size: 8px;
+  position: absolute;
+  top: 23%;
+  left: 43%;
+}
+
+.remainder {
+  position: absolute;
+  /*top: 100%;
+  left: 100%;*/
+}
+
+.layer:nth-child(1) { }
+.layer:nth-child(1) button {
+  -webkit-transform: rotate(150deg);
+      -ms-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+
 .main {
   font-family: 'Roboto', sans-serif;
   display: block;
   margin-left: 10%;
-  margin-right: 10%
-}
-
-.checkboxes {
-  display: inline-block;
-  text-align: left
-}.checkboxes p{
-    text-align: center;
-    font-size: 80%
+  margin-right: 10%;
+  color: #CCC
 }
 
 h1, h2, h3, h4, h5, h6 {
