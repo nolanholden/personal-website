@@ -7,27 +7,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Welcome home.</title>
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+  <!--<link rel="shortcut icon" type="image/x-icon" href=""/>-->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i|Roboto:300,300i&amp;subset=latin-ext" rel="stylesheet">
 	<script src="js/main.min.js"></script>
 </head>
-<body>
-  <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/potw1706a.jpg" />
-  <!--[if lt IE 8]>
-    <div class="browser-support-message">
-      <p>Parts of this site will look outdated because we use modern web design techniques which do not display correctly in your current browser. Improve your web experience by surfing with a <a href="http://browsehappy.com/">modern browser</a>.</p>
-    </div>
-  <![endif]-->
-  <div class="remainder">
+<body draggable="false">
   <noscript>
-    <div style="border: 4px solid red; padding: .2em; margin: 1em">
+    <div class="noscript-message">
       <h3>JavaScript disabled!</h3>
       <p>This page does not work without JavaScript.</p>
     </div>
   </noscript>
+  <!--[if lt IE 8]>
+    <div class="browser-support-message">
+      <p>Parts of this site will look outdated because this website uses modern web design techniques which do not display correctly in your current browser. Improve your web experience by surfing with a <a href="http://browsehappy.com/">modern browser</a>.</p>
+    </div>
+  <![endif]-->
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
@@ -37,32 +35,51 @@
   </div>
   <div>&nbsp;</div>
   <hr id="hr1" class="main">
-  <div id="astroscene" class="scene">
-    <div class="layer" data-depth="1.2">
-      <img src="img/nasa/buzz.jpg" />
-      <p id="overlay" class="text-overlay" style="display: none">See me on github!</p>
+  <div id="astroscene" class="scene no-sel" draggable="false">
+    <div class="layer no-sel" data-depth="1.2" draggable="false">
+      <img id="ast" class="astro no-sel" draggable="false" src="img/nasa/buzz-trial1-comp.png" />
+      <script>
+        var pic = document.getElementById('ast');
+        pic.style.zoom = 1.3;
+        pic.style.MozTransform = 'scale(1.3)';
+        pic.style.WebkitTransform = 'scale(1.3)';
+      </script>
     </div>
   </div>
-  <div class="main">
-    <p><span class="header">Here is a recent C++ project, implementing an <a href="http://weijima.com/index.php?option=com_content&view=article&id=11">m,n,k-game</a>.</span></p>
+  <div id="astroscene2" class="scene no-sel" draggable="false">
+    <div class="layer no-sel" data-depth="0.8" draggable="false">
+      <img id="stars" class="stars no-sel" draggable="false" src="img/nasa/andromeda-constellation.jpg" />
+      <script>
+        var pic = document.getElementById('stars');
+        pic.style.zoom = 1.3;
+        pic.style.MozTransform = 'scale(1.3)';
+        pic.style.WebkitTransform = 'scale(1.3)';
+      </script>
+    </div>
+  </div>
+  <div class="main blog">
+    <p><span class="header">Here is a recent C++ project, implementing an <a href="http://weijima.com/index.php?option=com_content&amp;view=article&amp;id=11">m,n,k-game</a>.</span></p>
     <p><span class="header">Or, see it on my <a href="https://github.com/nolanholden">github</a>!</span></p>
   </div>
-  <div class="main">
+  <div class="main blog">
     <script src="https://gist.github.com/nolanholden/eb91ba69957d43eeb0fa9b33b83e6597.js"></script>
   </div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <hr class="main">
-  <div>
   <script>
-    var astroscene = document.getElementById('astroscene');
-    var parallax = new Parallax(astroscene);
+    // document.getElementById('ast').ondragstart = function() { return false; };
+    // var noselects = document.getElementsByClassName('no-sel');
+    // for (let element of noselects) {
+    //   element.ondragstart = function() { return false; };
+    // }
+    new Parallax(document.getElementById('astroscene'));
+    new Parallax(document.getElementById('astroscene2'));
     astroscene.style.zIndex = -3;
     document.getElementById('hr1').style.zIndex = -4;
     document.body.style.overflowX = 'hidden';
-    var overlay = document.getElementById('overlay');
-    overlay.style.webkitTransform = 'rotate(-6.3deg)';
-    overlay.style.display = 'block';
   </script>
+  <script>document.getElementById('astroscene').className += ' fade-in1'</script>
+  <script>document.body.className += ' fade-in2';</script>
 </body>
 </html>
